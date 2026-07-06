@@ -10,8 +10,7 @@ import streamlit as st
 STUDENT_COLUMNS = ["no", "student_id", "fullname", "room"]
 SAVE_COLUMNS = [
     "timestamp",
-    "grade",
-    "room",
+    "class",
     "subject_code",
     "subject_name",
     "student_id",

@@ -55,6 +55,8 @@ def ensure_session_state() -> None:
 
 def build_editable_table(students_df: pd.DataFrame) -> pd.DataFrame:
     """สร้างตารางแก้ไขข้อมูล มส. และจำนวนคาบที่ขาด"""
+    table_height = min(900, 38 + (len(students_df) + 1) * 35)
+
     display_df = students_df.rename(
         columns={
             "no": "เลขที่",
@@ -70,6 +72,7 @@ def build_editable_table(students_df: pd.DataFrame) -> pd.DataFrame:
         key=f"student_editor_{st.session_state.editor_version}",
         use_container_width=True,
         hide_index=True,
+        height=table_height,
         disabled=["เลขที่", "เลขประจำตัว", "ชื่อ-นามสกุล"],
         column_config={
             "เลขที่": st.column_config.TextColumn("เลขที่"),
@@ -154,8 +157,7 @@ def main() -> None:
             return
 
         selected_df["timestamp"] = datetime.now().strftime("%Y-%m-%d %H:%M")
-        selected_df["grade"] = grade
-        selected_df["room"] = room
+        selected_df["class"] = f"{grade}/{room}"
         selected_df["subject_code"] = subject_code.strip()
         selected_df["subject_name"] = subject_name.strip()
 
