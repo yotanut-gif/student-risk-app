@@ -67,6 +67,7 @@ function saveNoRight(rows) {
     row.class || `${row.grade || ''}/${row.room || ''}`.replace(/\/$/, ''),
     row.subject_code,
     row.subject_name,
+    row.teacher,
     row.student_id,
     row.fullname,
     row.absence_period,

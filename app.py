@@ -131,7 +131,8 @@ def main() -> None:
     grade = st.selectbox("ระดับชั้น", GRADES)
     room = st.selectbox("ห้องเรียน", ROOMS)
     subject_code = st.text_input("รหัสวิชา", placeholder="ว21101")
-    subject_name = st.text_input("ชื่อรายวิชา", placeholder="วิทยาศาสตร์")
+    subject_name = st.text_input("ชื่อรายวิชา", placeholder="วิทยาศาสตร์1")
+    teacher = st.text_input("ครูผู้สอน", placeholder="นายใจดี ดีใจ")
 
     if st.button("โหลดรายชื่อนักเรียน", type="primary"):
         reload_students(grade, room)
@@ -160,6 +161,7 @@ def main() -> None:
         selected_df["class"] = f"{grade}/{room}"
         selected_df["subject_code"] = subject_code.strip()
         selected_df["subject_name"] = subject_name.strip()
+        selected_df["teacher"] = teacher.strip()
 
         try:
             save_to_sheet(selected_df)

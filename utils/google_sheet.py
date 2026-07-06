@@ -13,6 +13,7 @@ SAVE_COLUMNS = [
     "class",
     "subject_code",
     "subject_name",
+    "teacher",
     "student_id",
     "fullname",
     "absence_period",

@@ -48,7 +48,7 @@ no, student_id, fullname, room
 Sheet `no_right` ควรมี Columns:
 
 ```text
-timestamp, class, subject_code, subject_name, student_id, fullname, absence_period
+timestamp, class, subject_code, subject_name, teacher, student_id, fullname, absence_period
 ```
 
 ## ตั้งค่า Google Apps Script
@@ -112,7 +112,7 @@ url = "https://script.google.com/macros/s/YOUR_DEPLOYMENT_ID/exec"
 ## การทำงานของแอป
 
 - เลือกระดับชั้นและห้องเรียน
-- กรอกรหัสวิชาและชื่อรายวิชา
+- กรอกรหัสวิชา ชื่อรายวิชา และครูผู้สอน
 - กด `โหลดรายชื่อนักเรียน`
 - ระบบจะค้นหา `room` เช่น เลือก `ม.1` ห้อง `1` จะค้นหา `1/1`
 - เลือกนักเรียนที่เสี่ยงติด มส. และกรอกจำนวนคาบที่ขาด
