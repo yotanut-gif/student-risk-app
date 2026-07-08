@@ -16,7 +16,7 @@ ROOMS: list[int] = list(range(1, 21))
 def setup_page() -> None:
     """ตั้งค่าหน้าเว็บให้เป็นหน้าเดียวและไม่มี Sidebar"""
     st.set_page_config(
-        page_title="รายงานนักเรียนเสี่ยงติด มส.",
+        page_title="รายงานนักเรียนกลุ่มเสี่ยง",
         page_icon="📋",
         layout="centered",
         initial_sidebar_state="collapsed",
@@ -125,7 +125,7 @@ def main() -> None:
     setup_page()
     ensure_session_state()
 
-    st.title("รายงานนักเรียนเสี่ยงติด มส.")
+    st.title("รายงานนักเรียนกลุ่มเสี่ยง")
     if st.session_state.save_success:
         st.success("บันทึกข้อมูลสำเร็จ")
         st.session_state.save_success = False
